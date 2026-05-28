@@ -1,26 +1,14 @@
-# School Management System (Django Backend)
+Subject: Request for Permission to Use Django Backend in Project
 
-## Formal Request to Supervisor
+Dear Dr. Kadefue,
 
-I hope this message finds you well **@kadefue**.  
-My name is **YATHRIB HAMZA HEMED**, a second-year student at **Mzumbe University**,  
-studying **BSc. Information Technology Systems (ITS)**.  
-My registration number is **14322094/T.24**.
+I hope this message finds you well. My name is Yathrib Hamza Hemed, a second-year student at Mzumbe University pursuing BSc. ITS, with registration number 14322094/T.24.
 
-With due respect, I kindly request your permission to develop the assigned project using **Python Django** as the backend framework.  
-The project I propose is titled **School Management System**, designed to support classes from grade one up to grade seven.  
-My intention is to learn Django more deeply while following your guidance and supervision throughout the process.
+I kindly request your permission to develop our assigned project using Python Django as the backend framework. I believe this will help me strengthen my understanding of backend development and gain practical experience. The project I propose to work on is a School Management System, which will cover functionalities such as student registration, teacher assignment, and performance tracking.
 
-## Project Objectives
-- Headmaster registers teachers and students according to their education level.  
-- The system automatically assigns subjects based on student level.  
-- Teachers upload marks for the subjects they teach.  
-- The system calculates grades and average performance for each student.  
-- Parents can view their child’s results for each subject and overall performance.  
+I sincerely ask for your guidance and supervision throughout this project. I am committed to working diligently and respectfully under your instructions.
 
-## Closing Statement
-Dr. **@kadefue**, I respectfully ask for your approval and supervision in this project.  
-I am committed to working hard, learning carefully, and following your instructions step by step.  
-I sincerely hope my request will be accepted so that I may proceed under your guidance.
+Thank you very much for considering my request.
 
----
+Yours faithfully,  
+Yathrib Hamza Hemed  
