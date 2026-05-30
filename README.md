@@ -1,14 +1,22 @@
-Subject: Request for Permission to Use Django Backend in Project
+# School Management System
 
-Dear Dr. Kadefue,
+This project implements a School Management System (SMS) Admin Panel built with PHP (MySQLi) and styled with HTML/CSS.
+The Admin Panel provides functionality for managing Headmasters, Students, and monitoring school performance.
 
-I hope this message finds you well. My name is Yathrib Hamza Hemed, a second-year student at Mzumbe University pursuing BSc. ITS, with registration number 14322094/T.24.
+# Key features of ADMIN include:
 
-I kindly request your permission to develop our assigned project using Python Django as the backend framework. I believe this will help me strengthen my understanding of backend development and gain practical experience. The project I propose to work on is a School Management System, which will cover functionalities such as student registration, teacher assignment, and performance tracking.
+Admin Dashboard with statistics (Headmasters, Students, Average Performance).
 
-I sincerely ask for your guidance and supervision throughout this project. I am committed to working diligently and respectfully under your instructions.
+Register Headmaster with form validation (NIDA number must be 20 digits, numeric only).
 
-Thank you very much for considering my request.
+View Headmasters with Edit/Delete actions.
 
-Yours faithfully,  
-Yathrib Hamza Hemed  
+Edit Headmaster for updating records.
+
+Delete Headmaster with confirmation.
+
+Logout with session destruction and cache control.
+# Tech Stack
+Backend: PHP,Mysql
+Frontend: HTML,CSS,JS
+Enviroment: XAMPP
