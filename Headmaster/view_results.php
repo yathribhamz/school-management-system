@@ -21,7 +21,7 @@ if ($selected_class) {
     // Vuta matokeo ya wanafunzi wa darasa husika kwa kila somo
     $sql = "SELECT u.full_name, c.class_name, s.subject_name,
                    m.student_id, m.test1, m.test2, m.groupwork1, m.groupwork2, m.exam,
-                   m.total, m.grade, m.locked
+                   m.total, m.grade, m.locked, m.approved_by_headmaster
             FROM marks m
             INNER JOIN students st ON m.student_id = st.student_id
             INNER JOIN users u ON st.user_id = u.id
@@ -85,6 +85,13 @@ if ($selected_class) {
 
         <?php if ($selected_class && $results && $results->num_rows > 0): ?>
             <p><strong>Class Average:</strong> <?php echo round($class_avg,2); ?></p>
+
+            <!-- Button ya kuapprove matokeo yote ya darasa -->
+            <form method="POST" action="approve_results.php">
+                <input type="hidden" name="class_id" value="<?php echo $selected_class; ?>">
+                <button type="submit" class="approve-btn">Approve All Results for Class</button>
+            </form>
+
             <table>
                 <tr>
                     <th>Student Name</th>
@@ -93,6 +100,7 @@ if ($selected_class) {
                     <th>Total Marks</th>
                     <th>Grade</th>
                     <th>Position</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
                 <?php 
@@ -103,7 +111,7 @@ if ($selected_class) {
                     if ($current_subject !== $row['subject_name']) {
                         $current_subject = $row['subject_name'];
                         $position = 1;
-                        echo "<tr><td colspan='7' style='background:#ddd; font-weight:bold;'>Subject: ".$current_subject."</td></tr>";
+                        echo "<tr><td colspan='8' style='background:#ddd; font-weight:bold;'>Subject: ".$current_subject."</td></tr>";
                     }
                 ?>
                     <tr>
@@ -114,13 +122,22 @@ if ($selected_class) {
                         <td><?php echo $row['grade']; ?></td>
                         <td><?php echo $position++; ?></td>
                         <td>
+                            <?php 
+                                if ($row['approved_by_headmaster'] == 1) {
+                                    echo "<span style='color:green;'>Approved</span>";
+                                } else {
+                                    echo "<span style='color:red;'>Pending</span>";
+                                }
+                            ?>
+                        </td>
+                        <td>
                             <!-- Headmaster anaweza kufungua marks -->
                             <form method="POST" action="unlock_marks.php" style="display:inline;">
                                 <input type="hidden" name="student_id" value="<?php echo $row['student_id']; ?>">
                                 <button type="submit" class="unlock-btn">Unlock for Teacher</button>
                             </form>
 
-                            <!-- Headmaster anaweza approve matokeo -->
+                            <!-- Headmaster anaweza approve matokeo ya mwanafunzi mmoja -->
                             <form method="POST" action="approve_results.php" style="display:inline;">
                                 <input type="hidden" name="student_id" value="<?php echo $row['student_id']; ?>">
                                 <button type="submit" class="approve-btn">Approve for Parents</button>

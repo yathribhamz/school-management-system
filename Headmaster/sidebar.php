@@ -1,6 +1,6 @@
 <!-- sidebar.php -->
 <div class="sidebar">
-    <h2>Admin Panel</h2>
+    <h2>HeadMaster Panel</h2>
     <a href="headmaster_dashboard.php">Home Dashboard</a>
     <!-- Registration Dropdown -->
     <button class="dropdown-btn">Registration</button>

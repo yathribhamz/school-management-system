@@ -45,9 +45,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             }
                     header("Location: Teachers/Teacher_dashbord.php");
                     break;
-                case 'student':
-                    header("Location: student_dashboard.php");
-                    break;
+               case 'student':
+        // Hapa student aende kwenye dashboard yake mwenyewe
+                        $sql_student = "SELECT student_id FROM students WHERE user_id = ?";
+                        $stmt_student = $conn->prepare($sql_student);
+                        $stmt_student->bind_param("i", $row['id']);
+                        $stmt_student->execute();
+                        $res_student = $stmt_student->get_result();
+                        if ($res_student->num_rows > 0) {
+                            $student = $res_student->fetch_assoc();
+                            $_SESSION['student_id'] = $student['student_id']; // 🔑 sasa student_id ipo
+                        }
+                        header("Location: Students/student_dashboard.php");
+                        break;
             }
             exit();
         } else {
